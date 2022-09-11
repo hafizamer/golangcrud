@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>Golang CRUD</title>
+</head>
+<style>
+    .container {
+        max-width: 550px;
+    }
+</style>
+
+<body>
+    <h1>Add Patient</h1>
+
+    <div class="container mt-5">
+
+        <h2>Add Patient</h2>
+        <a href="/patient" class="btn btn-sm btn-primary">View Patient</a>
+        <hr />
+
+        {{if .message}}
+        <div class="alert alert-success">
+            {{.message}}
+        </div>
+        {{end}}
+
+        <form action="/patient/add" method="post">
+            <div class="form-group">
+                <label for="">Name</label>
+                <input type="text" name="name" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="">Nick</label>
+                <input type="text" name="nick" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="">Male/Female</label>
+                <select name="male_female" class="form-control">
+                    <option value="">Choose</option>
+                    <option value="1">Male</option>
+                    <option value="2">Female</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="">Place of Birth</label>
+                <input type="text" name="place_of_birth" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="">DOB</label>
+                <input type="date" name="date_of_birth" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="">Address</label>
+                <textarea name="address" class="form-control"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="">Phone</label>
+                <input type="text" name="phone" class="form-control">
+            </div>
+
+            <div class="form-group">
+                <button class="btn btn-primary btn-block" type="submit">Save</button>
+            </div>
+        </form>
+
+    </div>
+
+
+</body>
+
+</html>
